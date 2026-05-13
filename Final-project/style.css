@@ -38,7 +38,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 500px;
+  min-height: 600px;
   position: relative;
   padding: 3rem;
 }
@@ -61,10 +61,6 @@ body, html {
   transition: transform 0.6s ease;
 }
 
-.factory-content:hover .factory-image-container img {
-  transform: scale(1.05);
-}
-
 .factory-text-overlay {
   display: flex;
   align-items: center;
@@ -78,6 +74,12 @@ body, html {
   border-radius: 12px;
   border: 1px solid rgba(0, 255, 170, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(0, 255, 170, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.factory-text-overlay:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 48px rgba(0, 255, 170, 0.2), inset 0 1px 1px rgba(0, 255, 170, 0.2);
 }
 
 .factory-text-overlay::before {
@@ -180,7 +182,6 @@ body, html {
   display: block;
   position: relative;
   z-index: 0;
-  display: none;
 }
 
 .factory-overlay {
@@ -196,7 +197,7 @@ body, html {
   z-index: 2;
   backdrop-filter: blur(4px);
   transition: transform .22s ease, box-shadow .22s ease;
-  display: none;
+  display: block;
 }
 
 .factory-overlay h2 {
@@ -232,14 +233,14 @@ body, html {
 .navbar-brand * { color: inherit !important; }
 
 /* From Uiverse.io by 00Kubi */ 
-.container {
+.container.noselect {
   position: relative;
   width: 190px;
   height: 254px;
   transition: 200ms;
 }
 
-.container:active {
+.container.noselect:active {
   width: 180px;
   height: 245px;
 }
